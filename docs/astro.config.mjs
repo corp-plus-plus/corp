@@ -9,8 +9,11 @@ const corpGrammar = JSON.parse(fs.readFileSync(new URL('./corp.tmLanguage.json',
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Corp++ (corp)',
+			title: 'Corp++',
 			description: 'The Enterprise-Grade Systems Programming Language Where Architecture Meets Middle-Management Jargon',
+			logo: {
+				src: './src/assets/corp_logo.png',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/corp-plus-plus/corp' }
 			],

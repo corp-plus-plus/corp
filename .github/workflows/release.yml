@@ -1,0 +1,72 @@
+name: Publish GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release Tag (e.g. v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Package Standalone Binary
+        run: |
+          python scripts/build_binary.py
+          mkdir -p release-assets
+          cp dist/corp release-assets/corp
+          tar -czvf release-assets/corp-standalone-linux-macos.tar.gz -C dist corp
+          zip -j release-assets/corp-standalone.zip dist/corp
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name || inputs.tag_name }}
+          name: Corp++ Release ${{ github.ref_name || inputs.tag_name }}
+          body: |
+            ### Executive Deliverable Release
+
+            Welcome to the official release of **Corp++ (`.corp`)**!
+
+            #### Key Highlights
+            - **Single-File Standalone Binary**: Self-contained executable `corp` ready to run on any system with Python 3.
+            - **The Boardroom REPL**: Live interactive alignment sessions via `corp repl`.
+            - **Corporate VM & Compiler**: Bytecode virtual machine with stack execution (`corp run file.corp --vm`).
+            - **Passive-Aggressive Error Telemetry**: Enterprise Incident Reports with automatic HR PIP notices.
+            - **Astro Starlight Documentation**: Complete interactive guide suite.
+
+            #### Download & Run
+            ```bash
+            # Download the standalone binary
+            chmod +x corp
+            ./corp run examples/01_onboarding.corp
+            ```
+          files: |
+            release-assets/corp
+            release-assets/corp-standalone-linux-macos.tar.gz
+            release-assets/corp-standalone.zip
+          draft: false
+          prerelease: false

@@ -7,6 +7,8 @@ const corpGrammar = JSON.parse(fs.readFileSync(new URL('./corp.tmLanguage.json',
 
 // https://astro.build/config
 export default defineConfig({
+	site: process.env.SITE || 'https://corp-plus-plus.github.io',
+	base: process.env.BASE_PATH || undefined,
 	integrations: [
 		starlight({
 			title: 'Corp++',

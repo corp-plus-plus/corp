@@ -3,7 +3,7 @@
 # "Automating Enterprise Value Delivery Since Q3"
 # ==============================================================================
 
-.PHONY: all test build package run-examples repl clean audit docs docs-dev help
+.PHONY: all test build package release run-examples repl clean audit docs docs-dev help
 
 PYTHON ?= python3
 
@@ -13,6 +13,7 @@ help:
 	@echo "Corp++ Enterprise Build Automation Menu:"
 	@echo "  make test          - Run full unit test suite"
 	@echo "  make package       - Build standalone dist/corp executable binary"
+	@echo "  make release       - Create release distribution tarballs & zip"
 	@echo "  make run-examples  - Execute all example deliverable scripts"
 	@echo "  make repl          - Launch 'The Boardroom' interactive REPL"
 	@echo "  make audit         - Run static compliance check on all examples"
@@ -27,6 +28,10 @@ test:
 package:
 	@echo "==> Building Standalone Corp++ Binary..."
 	@$(PYTHON) scripts/build_binary.py
+
+release:
+	@echo "==> Generating Release Distribution Bundles..."
+	@$(PYTHON) scripts/create_release.py
 
 run-examples: package
 	@echo "==> Executing Corp++ Deliverable Example Suite..."

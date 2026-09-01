@@ -1,0 +1,14 @@
+// ==========================================================
+// Corp++ Example 07: Hostile Takeover Error Demonstration
+// ==========================================================
+
+sync_alignment {
+    touch_base("Attempting illegal mutation of core competency...");
+
+    core_competency CEO_COMPENSATION = 10000000;
+
+    // This illegal restructure will trigger a corporate Hostile Takeover Violation
+    restructure CEO_COMPENSATION = 50000;
+
+    touch_base("This line will never be reached.");
+}

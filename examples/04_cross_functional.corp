@@ -1,0 +1,27 @@
+// ==========================================================
+// Corp++ Example 04: Cross-Functional Collaboration (Delegates)
+// ==========================================================
+
+// Declare a reusable enterprise delegate (function)
+delegate calculate_synergy(base_value, multiplier) {
+    action_item total_synergy = base_value * multiplier;
+    deliverable total_synergy;
+}
+
+delegate format_memo(recipient, message) {
+    deliverable "MEMO TO " + recipient + ": " + message;
+}
+
+sync_alignment {
+    touch_base("Initializing Cross-Functional Delegate Invocation...");
+
+    // Function invocation via loop_in
+    action_item q3_synergy = loop_in(calculate_synergy(250, 4));
+    touch_base("Computed Q3 Synergy Output:", q3_synergy);
+
+    // Direct invocation format
+    action_item executive_memo = loop_in(format_memo("Shareholders", "Record high synergy achieved."));
+    touch_base(executive_memo);
+
+    hard_stop;
+}

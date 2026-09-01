@@ -1,0 +1,30 @@
+// ==========================================================
+// Corp++ Example 01: Employee Onboarding & Strategic Assets
+// ==========================================================
+
+sync_alignment {
+    // Announce kickoff
+    touch_base("Starting Q3 Stakeholder Alignment Meeting...");
+
+    // Declare mutable variables
+    action_item employee_name = "Alex Vance";
+    action_item current_level = 3;
+    action_item annual_bonus = 15000;
+
+    // Declare immutable constant
+    core_competency COMPANY_MISSION = "Delivering Hyper-Scalable Synergy";
+
+    touch_base("Onboarding:", employee_name);
+    touch_base("Initial Level:", current_level);
+    touch_base("Mission Statement:", COMPANY_MISSION);
+
+    // Promote employee
+    promote current_level;
+    restructure annual_bonus = annual_bonus + 5000;
+
+    touch_base("Post-Review Promoted Level:", current_level);
+    touch_base("Restructured Bonus:", annual_bonus);
+
+    // Clean exit
+    hard_stop;
+}

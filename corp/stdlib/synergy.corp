@@ -1,0 +1,31 @@
+// ==========================================================
+// Corp++ Standard Library: Synergy Utilities
+// ==========================================================
+
+quarterly_deliverables SynergyLib {
+    delegate max_growth(a, b) {
+        as_per_our_discussion (a > b) {
+            deliverable a;
+        } pivot {
+            deliverable b;
+        }
+    }
+
+    delegate min_risk(a, b) {
+        as_per_our_discussion (a < b) {
+            deliverable a;
+        } pivot {
+            deliverable b;
+        }
+    }
+
+    delegate compound_interest(principal, rate, periods) {
+        action_item total = principal;
+        action_item i = 0;
+        circle_back (i < periods) {
+            restructure total = total + (total * rate);
+            promote i;
+        }
+        deliverable total;
+    }
+}

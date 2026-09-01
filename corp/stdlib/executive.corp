@@ -1,0 +1,16 @@
+// ==========================================================
+// Corp++ Standard Library: Executive Decision Helpers
+// ==========================================================
+
+quarterly_deliverables ExecutiveHelpers {
+    delegate evaluate_roi(revenue, cost) {
+        as_per_our_discussion (cost == 0) {
+            opt_out "Cannot calculate ROI with zero cost allocation basis.";
+        }
+        deliverable (revenue - cost) / cost;
+    }
+
+    delegate is_mission_critical(score) {
+        deliverable score >= 80;
+    }
+}

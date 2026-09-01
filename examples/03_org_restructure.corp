@@ -1,0 +1,43 @@
+// ==========================================================
+// Corp++ Example 03: Org Restructure, Loops, & Layoffs GC
+// ==========================================================
+
+sync_alignment {
+    touch_base("Executing Cross-Departmental Workstream Optimization...");
+
+    core_competency DEPARTMENT_HQ = "Tower B, Executive Suite";
+
+    // Iterate across departments
+    action_item departments = ["Engineering", "Product", "Synergy Ops", "Legal"];
+
+    touch_base("Auditing current departments:");
+    touch_every_base (dept in departments) {
+        touch_base(" - Active Department:", dept);
+    }
+
+    // Circular sprint loop
+    action_item sprint_count = 1;
+    circle_back (sprint_count <= 3) {
+        touch_base("Completing Sprint Cycle:", sprint_count);
+        promote sprint_count;
+    }
+
+    // Nested scope with layoffs memory flush
+    {
+        core_competency SURVIVING_STRATEGY = "Core Platform Resiliency";
+        action_item temporary_contractor_1 = "Contractor Alpha";
+        action_item temporary_contractor_2 = "Contractor Beta";
+
+        touch_base("Pre-Layoffs Assets in Scope:");
+        touch_base("Strategy:", SURVIVING_STRATEGY);
+        touch_base("Contractors active:", temporary_contractor_1, "and", temporary_contractor_2);
+
+        // Scope memory flush / GC
+        layoffs;
+
+        touch_base("Post-Layoffs Retained Core Competency:", SURVIVING_STRATEGY);
+    }
+
+    touch_base("Org restructure finalized under HQ:", DEPARTMENT_HQ);
+    hard_stop;
+}

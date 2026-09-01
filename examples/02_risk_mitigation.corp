@@ -1,0 +1,29 @@
+// ==========================================================
+// Corp++ Example 02: Enterprise Risk Mitigation (Exceptions)
+// ==========================================================
+
+sync_alignment {
+    touch_base("Commencing Enterprise Risk Assessment Audit...");
+
+    action_item risk_encountered = misaligned;
+
+    let's_take_this_offline {
+        touch_base("Entering confidential protected execution chamber...");
+        
+        action_item project_budget = 0;
+        
+        as_per_our_discussion (project_budget == 0) {
+            broadcast_all_hands("Budget exhausted! Initiating executive opt-out.");
+            opt_out "Severe bandwidth exhaustion in Project Apollo.";
+        } pivot {
+            touch_base("Budget is healthy. Proceeding as planned.");
+        }
+    } mitigate_risk (err) {
+        touch_base("[RISK MITIGATED] Handled incident smoothly:", err);
+        restructure risk_encountered = aligned;
+    }
+
+    touch_base("Risk mitigated successfully:", risk_encountered);
+    touch_base("All quarterly deliverables secured.");
+    hard_stop;
+}

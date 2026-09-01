@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corp-plus-plus"
+version = "1.0.0"
+description = "Corp++ (corp) - Esoteric Systems Language where Enterprise Architecture meets Middle-Management Jargon"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "Executive Leadership Team", email = "board@corp-plus-plus.internal" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+]
+
+[project.scripts]
+corp = "corp.cli.main:main"

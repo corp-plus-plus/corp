@@ -1,25 +1,22 @@
 ---
-name: Strategic Initiative Proposal (Feature Request)
-about: Propose a high-synergy language construct or toolchain enhancement
-title: '[PROPOSAL]: '
-labels: 'enhancement, strategic-initiative'
+name: Feature Request (Proposal)
+about: Suggest a new feature or corporate keyword
+title: '[FEATURE]: '
+labels: 'enhancement'
 assignees: ''
 ---
 
-## Strategic Objective
-*Describe the high-level business case and motivation for this initiative.*
+### Feature Summary
+What feature or keyword would you like to see in Corp++?
 
-## Proposed Corporate Syntax & Semantics
-*Provide code samples illustrating the proposed middle-management keywords and mechanics.*
+### Proposed Syntax & Example
+How should it look in `.corp` code?
 
 ```corp
 sync_alignment {
-    // Proposed syntax here
+    // Example usage here
 }
 ```
 
-## Stakeholder Impact & ROI
-*How does this proposal maximize cross-functional developer velocity?*
-
-## Alternative Pivots Considered
-*What alternative approaches were tabled before filing this proposal?*
+### Why would this be useful?
+Explain the problem it solves or how it fits the corporate theme.

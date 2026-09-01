@@ -1,123 +1,97 @@
 # Announcing Corp++: Why Middle Management is the Future of Systems Programming
 
-**Published:** Q3 Strategic Deliverables Release  
-**Author:** The Executive Leadership Team & Architecture Steering Committee  
-**Reading Time:** 5-minute alignment sync  
+I got tired of hearing tech leads explain stack traces while executives asked for "cross-functional synergy."
+
+So I built **Corp++** (`.corp`): an esoteric programming language that forces your code to sound like an all-hands slide deck.
 
 ---
 
-## The Billion-Dollar Communication Gap
+## The Joke That Got Out of Hand
 
-Every year, Fortune 500 enterprises spend millions of dollars attempting to solve a fundamental corporate dilemma: **engineers speak code, but leadership speaks strategy.**
+Most programming languages are built around math or logic. Corp++ is built around corporate bureaucracy.
 
-When a systems programmer says:
-> *"We need to allocate a mutable reference on the heap, loop over a vector with an iterator, and catch null pointer dereferences with a try-catch block."*
+Instead of declaring variables with `let` or `const`, you allocate an `action_item` or establish an immutable `core_competency`. If you try to change a `core_competency`, the compiler doesn't just throw an error — it halts execution with a `HOSTILE_TAKEOVER_VIOLATION` and issues a Performance Improvement Plan (PIP).
 
-Management hears:
-> *"Unplanned operational overhead with undefined ROI."*
-
-Conversely, when a Vice President says:
-> *"Let's take this offline, align on core deliverables, and perform strategic layoffs to optimize bandwidth."*
-
-The engineering team updates their resumes.
-
-**Corp++ (`.corp`)** was engineered to permanently unify these two worlds. It is the world’s first esoteric systems programming language where enterprise-grade architecture meets unapologetic middle-management jargon.
-
----
-
-## Core Philosophy: Language as Corporate Governance
-
-In Corp++, every syntactic token enforces sound corporate governance:
+Here's what actual Corp++ code looks like:
 
 ```corp
 sync_alignment {
-    core_competency MISSION = "Hyper-Scalable Synergies";
-    action_item head_count = 12;
+    core_competency COMPANY_MISSION = "Hyper-Scalable Synergies";
+    action_item headcount = 12;
 
-    promote head_count;
-    touch_base("Strategic Headcount Target:", head_count);
+    promote headcount;
+    touch_base("Strategic Headcount Target:", headcount);
 
     hard_stop;
 }
 ```
 
-### 1. Mandatory Executive Alignment
-You cannot simply write code at the root of a file and hope it runs. All business logic must be wrapped inside a **`sync_alignment { ... }`** block (`main()` equivalent). If leadership hasn't aligned, code does not execute.
+---
 
-### 2. Immovable Core Competencies
-Variables allocated with **`core_competency`** are strictly immutable constants. If an engineer attempts to mutate a core competency:
+## How it Actually Works
 
-```corp
-core_competency CEO_BONUS = 50000000;
-restructure CEO_BONUS = 0;
-```
+Under the hood, Corp++ isn't just a toy regex replacer. It has a full compiler pipeline:
 
-Corp++ will immediately halt execution with a **`HOSTILE_TAKEOVER_VIOLATION`** and generate an emergency Incident Report for the Board of Directors.
+1. **Lexer & Parser**: A recursive descent parser that constructs an Abstract Syntax Tree (AST) from corporate tokens.
+2. **Interpreter & Virtual Machine**: You can run scripts either via the tree-walking interpreter (`corp run file.corp`) or compile them to bytecode and execute on a stack-based Corporate Virtual Machine (`corp run file.corp --vm`).
+3. **Memory Management via Layoffs**:
+   When memory gets tight, you don't call `free()`. You call `layoffs;`.
+   ```corp
+   {
+       core_competency SURVIVING_STRATEGY = "Core Platform Resiliency";
+       action_item temp_contractor_1 = "Contractor Alpha";
+       action_item temp_contractor_2 = "Contractor Beta";
 
-### 3. Scope-Level Headcount Optimization (`layoffs`)
-Memory management in Corp++ is both ruthless and efficient. When a scope experiences bandwidth pressure, developers can trigger **`layoffs;`**.
+       // Purges all non-core mutable variables in active scope
+       layoffs;
 
-The runtime immediately inspects the active lexical environment, purges all non-core mutable `action_item` allocations, retains immutable `core_competency` anchors, and logs an official restructuring memo to `stderr`.
+       // Accessing temp_contractor_1 now throws an Unvetted Resource error!
+   }
+   ```
+4. **Passive-Aggressive Error Reporting**:
+   Runtime errors format like real executive emails:
+   ```text
+   ╔══════════════════════════════════════════════════════════════════════════╗
+   ║  [CORP++ ENTERPRISE INCIDENT REPORT] ID: CORP-INC-89412                 ║
+   ║  ESCALATION LEVEL: ZERO_DIVIDEND_PERFORMANCE_ANOMALY                 ║
+   ╚══════════════════════════════════════════════════════════════════════════╝
+   Per my last email, Division by zero is not aligned with our Q3 growth objectives.
+
+   Location: src/finance.corp:14:18
+
+       14 |     action_item margin = total_profit / zero_cost;
+          |                  ^
+
+   Next Steps: Action Item: A Performance Improvement Plan (PIP) has been automatically scheduled with HR.
+   ```
 
 ---
 
-## Passive-Aggressive Error Telemetry & Automated PIPs
+## Single Binary: Send it to your Team
 
-Traditional compilers print unhelpful stack traces like `NullPointerException at line 42`. 
+I built Corp++ with zero third-party dependencies using Python standard libraries.
 
-Corp++ introduces **Enterprise Incident Telemetry**. When an exception occurs, the runtime formats an authentic corporate incident memo complete with passive-aggressive escalation logs:
-
-```text
-╔══════════════════════════════════════════════════════════════════════════╗
-║  [CORP++ ENTERPRISE INCIDENT REPORT] ID: CORP-INC-89412                 ║
-║  ESCALATION LEVEL: ZERO_DIVIDEND_PERFORMANCE_ANOMALY                 ║
-╚══════════════════════════════════════════════════════════════════════════╝
-Per my last email, Division by zero is not aligned with our Q3 growth objectives.
-
-Location: src/finance.corp:14:18
-
-    14 |     action_item margin = total_profit / zero_cost;
-       |                  ^
-
-Next Steps: Action Item: A Performance Improvement Plan (PIP) has been automatically scheduled with HR.
-```
-
----
-
-## Enterprise Toolchain & "Send to Friends" Binary
-
-Corp++ was designed with zero third-party vendor risk. Built entirely in Python using standard libraries, it compiles into a self-contained single-file executable binary at **`dist/corp`**.
-
-You can distribute `dist/corp` directly to colleagues over Slack or email:
+Running `make package` creates a single, self-contained executable binary at `dist/corp`. You can drop it into `/usr/local/bin` or zip it and send it to your coworkers.
 
 ```bash
-# Clone the repository
-git clone https://github.com/corp-plus-plus/corp.git
-cd corp
-
-# Package the standalone binary
-make package
-
-# Execute any deliverable script
+# Run any file
 ./dist/corp run examples/01_onboarding.corp
 
-# Launch the interactive Boardroom REPL
+# Open "The Boardroom" interactive REPL
 ./dist/corp repl
+
+# Audit your code's synergy score
+./dist/corp audit examples/05_q3_financials.corp
 ```
 
 ---
 
-## The Q4 Strategic Roadmap
+## Full Docs
 
-As we look ahead to next quarter, the Architecture Steering Committee is actively exploring:
-- **`annual_shareholders_meeting`**: Multi-threaded concurrency with worker thread quorum voting.
-- **`golden_parachute`**: Safe heap memory de-allocation with generous severance buffers.
-- **`synergy_jit`**: Just-In-Time compilation targeting executive LLVM bitcode.
+Full documentation is built with Astro Starlight in `docs/`:
 
----
+```bash
+cd docs && npm install && npm run dev
+```
 
-## Get Started Today
-
-The full documentation site built with Astro Starlight is available locally via `make docs-dev` and in the [`docs/`](https://github.com/corp-plus-plus/corp/tree/main/docs) directory.
-
-Remember: *Align early, touch base often, and protect core competencies.*
+Check out the repo, write some `.corp` files, and remember: *align early, touch base often, and protect core competencies.*

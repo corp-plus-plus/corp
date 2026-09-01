@@ -1,82 +1,86 @@
 # Corp++ (`.corp`)
-### *The Enterprise-Grade Systems Programming Language Where Architecture Meets Middle-Management Jargon*
+### *Where systems programming meets middle-management speak.*
 
-[![Corporate Alignment](https://img.shields.io/badge/Synergy-100%25-brightgreen.svg)](#)
-[![ESG Compliance](https://img.shields.io/badge/ESG_Rating-AAA-blue.svg)](#)
-[![License](https://img.shields.io/badge/License-Enterprise_Proprietary-red.svg)](#)
-[![Headcount](https://img.shields.io/badge/Headcount-Optimized-orange.svg)](#)
-
----
-
-## Executive Summary
-
-**Corp++** is the premier esoteric systems programming language meticulously architected to bridge the gap between high-performance computational deliverables and corporate middle-management vernacular.
-
-Gone are the days of mundane `main()`, `let`, `if`, `while`, and `try/catch`. In Corp++, every variable declaration is an **`action_item`**, every constant is a non-negotiable **`core_competency`**, conditional branching requires executive alignment (**`as_per_our_discussion`**), and exceptions trigger structured **`let's_take_this_offline`** risk mitigation protocols.
+[![Build Status](https://github.com/corp-plus-plus/corp/actions/workflows/ci.yml/badge.svg)](#)
+[![Synergy](https://img.shields.io/badge/Synergy-100%25-brightgreen.svg)](#)
+[![License](https://img.shields.io/badge/License-ViB_v4.1-blue.svg)](#)
 
 ---
 
-## Quickstart & Standalone Binary ("Send to Friends")
+## What is this?
 
-Corp++ ships with a self-contained, single-file executable binary (`dist/corp`) that you can directly execute, copy into your `PATH`, or send directly to colleagues and stakeholders.
+**Corp++** is an esoteric programming language designed for when you want your code to sound like an all-hands slide deck.
 
-### 1. Build or Package the Binary
+Instead of `let`, `const`, `if`, `while`, and `try/catch`, everything is framed in pure corporate buzzwords:
+
+- Variables are **`action_item`**
+- Constants are **`core_competency`** (and mutating them triggers a `HOSTILE_TAKEOVER_VIOLATION`)
+- `if` statements are **`as_per_our_discussion`**
+- Loops are **`circle_back`**
+- Functions are **`delegate`** routines that you **`loop_in`**
+- Scope garbage collection is triggered with **`layoffs;`**
+- Errors don't just crash — they file a **Performance Improvement Plan (PIP)** with HR
+
+Built in pure Python with zero dependencies, packaged into a single standalone binary you can send to your friends.
+
+---
+
+## Quickstart & Standalone Binary
+
+You don't need to install anything except Python 3. The compiler bundles into a standalone executable at `dist/corp`.
+
+### 1. Build the Binary
 ```bash
-# Package the standalone executable binary to dist/corp
 make package
-
-# Or manually via Python:
-python3 scripts/build_binary.py
+# or: python3 scripts/build_binary.py
 ```
 
-### 2. Distribute to Friends
-The compiled executable binary is located at `dist/corp`. Anyone on your team with Python 3 can run it directly:
+### 2. Run a Script
 ```bash
-# Copy to friends or your system bin:
-cp dist/corp /usr/local/bin/corp
+./dist/corp run examples/01_onboarding.corp
+```
 
-# Execute any .corp deliverable:
-corp run examples/01_onboarding.corp
+### 3. Send to Friends
+You can copy `dist/corp` anywhere on macOS/Linux and run it directly:
+```bash
+cp dist/corp /usr/local/bin/corp
+corp run my_script.corp
 ```
 
 ---
 
-## The Corp++ Grammar & Language Specification
+## Syntax Cheatsheet
 
-| Language Construct | Corp++ Syntax | Standard Equivalent | Corporate Operational Context |
-|---|---|---|---|
-| **Entry Point** | `sync_alignment { ... }` | `int main() { ... }` | Mandatory Q3 executive alignment kick-off. |
-| **Namespace / Module** | `quarterly_deliverables Name { ... }` | `namespace / module` | Strategic functional workstream isolation. |
-| **Clean Exit** | `hard_stop;` | `return 0; / exit(0);` | Clean departure before the next sprint. |
-| **Mutable Allocation** | `action_item name = val;` | `let / var` | Dynamically allocated sprint bandwidth. |
-| **Immutable Constant** | `core_competency NAME = val;` | `const` | Non-negotiable enterprise anchor value. |
-| **Variable Mutation** | `restructure name = val;` | `name = val;` | Re-allocating departmental resources. |
-| **Unary Increment** | `promote name;` | `name++ / += 1` | Annual performance review elevation. |
-| **Unary Decrement** | `demote name;` | `name-- / -= 1` | Corrective performance re-calibration. |
-| **Scope Memory Flush** | `layoffs;` | `Garbage Collection` | Clears all mutable action items in active scope. |
-| **Conditional (`if`)** | `as_per_our_discussion (cond) { ... }` | `if (cond) { ... }` | Executive consensus verification. |
-| **Else Branch** | `pivot { ... }` | `else { ... }` | Agility pivot when targets are not met. |
-| **Loop (`while`)** | `circle_back (cond) { ... }` | `while (cond) { ... }` | Infinite sync loop until alignment is met. |
-| **Iteration (`for..in`)** | `touch_every_base (x in coll) { ... }` | `for (x of coll) { ... }` | Holistic stakeholder survey loop. |
-| **Break Loop** | `table_this;` | `break;` | Parking-lotting an agenda item indefinitely. |
-| **Continue Loop** | `push_to_next_sprint;` | `continue;` | Deferring unfinished work to the backlog. |
-| **Standard Output** | `touch_base(data);` | `print() / stdout` | High-visibility status updates. |
-| **Standard Input** | `please_advise(prompt);` | `input() / stdin` | Requesting executive sign-off from user. |
-| **Alert / Logging** | `broadcast_all_hands(msg);` | `stderr / console.error` | Emergency company-wide town hall alert. |
-| **Function Definition**| `delegate name(args) { ... }` | `function name(args)` | Delegating work down the org hierarchy. |
-| **Function Call** | `loop_in(name(args))` | `name(args)` | Looping in key cross-functional stakeholders.|
-| **Return Value** | `deliverable val;` | `return val;` | Shipping tangible business value. |
-| **Protected (`try`)** | `let's_take_this_offline { ... }` | `try { ... }` | Handling sensitive errors behind closed doors.|
-| **Catch Handler** | `mitigate_risk (err) { ... }` | `catch (err) { ... }` | Damage control and KPI stabilization. |
-| **Throw Exception** | `opt_out "reason";` | `throw new Error()` | Strategic resource withdrawal. |
+| Standard Keyword | Corp++ Equivalent | What it does |
+|---|---|---|
+| `main()` | `sync_alignment { ... }` | Mandatory entry point for your program. |
+| `let x = 5` | `action_item x = 5;` | Mutable variable. |
+| `const Y = 10` | `core_competency Y = 10;` | Immutable constant. Cannot be reassigned. |
+| `x = 20` | `restructure x = 20;` | Reassign a variable. |
+| `x++` / `x--` | `promote x;` / `demote x;` | Increment or decrement by 1. |
+| `GC / free()` | `layoffs;` | Flushes all non-core mutable variables from active scope. |
+| `if (cond)` | `as_per_our_discussion (cond) { ... }` | Conditional branch. |
+| `else` | `pivot { ... }` | Fallback branch. |
+| `while (cond)` | `circle_back (cond) { ... }` | Loop while condition is aligned (`true`). |
+| `for (x of arr)` | `touch_every_base (x in arr) { ... }` | Iterate over arrays. |
+| `break` | `table_this;` | Break out of a loop. |
+| `continue` | `push_to_next_sprint;` | Skip to next loop iteration. |
+| `print()` | `touch_base(...);` | Write to stdout. |
+| `input()` | `please_advise("Prompt: ");` | Read from stdin. |
+| `console.error()` | `broadcast_all_hands(...);` | Write to stderr. |
+| `function fn()` | `delegate fn(...) { ... }` | Declare a function. |
+| `fn(args)` | `loop_in(fn(args))` | Call a function. |
+| `return x` | `deliverable x;` | Return a value. |
+| `try { ... }` | `let's_take_this_offline { ... }` | Catch exceptions. |
+| `catch (err)` | `mitigate_risk (err) { ... }` | Handle errors. |
+| `throw err` | `opt_out "Reason";` | Raise runtime exception. |
 
 ---
 
-## Hello World & Example Deliverables
+## Code Examples
 
-### 1. Onboarding (`examples/01_onboarding.corp`)
+### 1. Employee Onboarding (`examples/01_onboarding.corp`)
 ```corp
-// Deliverable: 01_onboarding.corp
 sync_alignment {
     touch_base("Starting Q3 Stakeholder Alignment Meeting...");
 
@@ -93,20 +97,20 @@ sync_alignment {
     promote current_level;
     restructure annual_bonus = annual_bonus + 5000;
 
-    touch_base("Post-Review Promoted Level:", current_level);
+    touch_base("Post-Review Level:", current_level);
     touch_base("Restructured Bonus:", annual_bonus);
 
     hard_stop;
 }
 ```
 
-### 2. Risk Mitigation & Error Containment (`examples/02_risk_mitigation.corp`)
+### 2. Risk Mitigation & Protected Execution (`examples/02_risk_mitigation.corp`)
 ```corp
 sync_alignment {
     let's_take_this_offline {
-        action_item project_budget = 0;
+        action_item budget = 0;
         
-        as_per_our_discussion (project_budget == 0) {
+        as_per_our_discussion (budget == 0) {
             broadcast_all_hands("Budget exhausted! Initiating executive opt-out.");
             opt_out "Severe bandwidth exhaustion in Project Apollo.";
         }
@@ -118,7 +122,7 @@ sync_alignment {
 }
 ```
 
-### 3. Corporate KPI Evaluation (FizzBuzz) (`examples/06_fizzbuzz_kpi.corp`)
+### 3. Corporate FizzBuzz (`examples/06_fizzbuzz_kpi.corp`)
 ```corp
 sync_alignment {
     action_item kpi_index = 1;
@@ -146,11 +150,11 @@ sync_alignment {
 
 ---
 
-## Corporate Incident Telemetry & PIP Notices
+## Error Telemetry & Incident Reports
 
-When errors occur, Corp++ outputs enterprise incident reports with passive-aggressive escalation levels and actionable Performance Improvement Plans (PIPs):
+When your code errors, Corp++ prints a full incident memo with passive-aggressive feedback:
 
-```
+```text
 ╔══════════════════════════════════════════════════════════════════════════╗
 ║  [CORP++ ENTERPRISE INCIDENT REPORT] ID: CORP-INC-10194                 ║
 ║  ESCALATION LEVEL: HOSTILE_TAKEOVER_VIOLATION                        ║
@@ -167,19 +171,15 @@ Next Steps: Action Item: Escalate to your Level 2 Managing Director immediately.
 
 ---
 
-## "The Boardroom" Interactive REPL
+## Interactive REPL: "The Boardroom"
 
-Launch an interactive corporate alignment session directly from your terminal:
+Jump straight into a live alignment session:
 
 ```bash
-corp repl
+./dist/corp repl
 ```
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║               CORP++ ENTERPRISE BOARDROOM REPL (v1.0)                ║
-║  "Where Systems Programming Meets Unapologetic Middle-Management"   ║
-╚══════════════════════════════════════════════════════════════════════╝
+```text
 corp[Q1]> action_item headcount = 5;
 corp[Q2]> promote headcount;
 corp[Q3]> touch_base("Current Headcount:", headcount);
@@ -195,25 +195,30 @@ corp[Q6]> hard_stop
 
 ---
 
-## CLI Reference (`corp`)
+## CLI Commands
 
-```
-usage: corp [-h] [-v] {run,compile,repl,audit,package} ...
-
-Corporate Commands:
-  run         Execute a Corp++ (.corp) deliverable file (optional: --vm)
-  compile     Compile .corp file to bytecode / inspect disassembly (-d)
-  repl        Launch 'The Boardroom' interactive alignment REPL
-  audit       Audit .corp file for enterprise KPI and ESG compliance
-  package     Build standalone single-file executable binary (dist/corp)
+```bash
+corp run file.corp        # Run with tree-walking interpreter
+corp run file.corp --vm   # Run with stack-based bytecode virtual machine (CVM)
+corp compile -d file.corp # View bytecode disassembly
+corp audit file.corp      # Check code alignment and generate a synergy score
+corp repl                 # Start interactive REPL
+corp package              # Re-bundle the standalone binary to dist/corp
 ```
 
 ---
 
-## Enterprise Compliance & Governance
-- **Zero Third-Party Vendor Risk**: Built 100% in pure Python with standard libraries.
-- **Git Versioned & Tagged**: Full release lineage maintained in version control.
-- **Strict Layoffs Policy**: Non-core mutable variables are immediately garbage-collected upon corporate restructuring.
+## Documentation
+
+Full docs built with Astro Starlight are in the `docs/` folder:
+
+```bash
+make docs-dev
+# Open http://localhost:4324
+```
 
 ---
-*© 2026 The Board of Directors. All Deliverables Reserved.*
+
+## License
+
+Protected under [ViB License v4.1 — Restricted Use License](LICENSE).

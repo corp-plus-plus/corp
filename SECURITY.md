@@ -1,14 +1,7 @@
-# Security & Vulnerability Disclosure Policy
+# Security Policy
 
-## Enterprise Commitment
-At Corp++, protecting intellectual capital and preventing unauthorized hostile takeovers is a strategic priority.
+## Reporting Security Issues
 
-## Reporting a Security Vulnerability
-If you discover an unmitigated risk, bandwidth leak, or memory exploitation vulnerability in Corp++:
+If you find a security vulnerability in Corp++, please don't open a public GitHub issue.
 
-1. **Do not disclose publicly.**
-2. Send a confidential email to `hi@veerbajaj.com` with:
-   - Incident ID and severity assessment
-   - Proof of Concept (.corp file)
-   - Proposed risk mitigation steps
-
+Instead, email **hi@veerbajaj.com** with details and steps to reproduce. We'll review it and get back to you as soon as possible.

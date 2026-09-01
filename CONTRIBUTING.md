@@ -1,38 +1,42 @@
 # Contributing to Corp++
 
-Welcome to the **Corp++ Contributor Onboarding Program**! We welcome cross-functional synergy from engineers, architects, and strategic stakeholders worldwide.
+Thanks for checking out Corp++! Whether you're fixing a bug, adding a new corporate keyword, or improving documentation, contributions are welcome.
 
 ---
 
-## The Corporate Contribution Workflow
+## Getting Started
 
-1. **Alignment (Fork & Branch)**:
-   Fork the repository and create an aligned feature branch:
+1. **Fork and clone the repo**:
    ```bash
-   git checkout -b feature/strategic-initiative-name
+   git clone https://github.com/corp-plus-plus/corp.git
+   cd corp
    ```
 
-2. **Compliance & Quality Assurance**:
-   Ensure all changes pass our automated quality assurance suite:
+2. **Run tests**:
+   Make sure everything is passing locally before making changes:
+   ```bash
+   make test
+   ```
+
+3. **Make your changes**:
+   - Write your code in `corp/`
+   - Add a test in `tests/`
+   - If adding examples or docs, update `examples/` and `docs/`
+
+4. **Verify your build**:
    ```bash
    make test
    make package
    make run-examples
    ```
 
-3. **Documentation Alignment**:
-   If introducing new keywords, update the documentation in `docs/` and verify the build:
-   ```bash
-   make docs
-   ```
-
-4. **Executive Sign-Off (PR)**:
-   Submit a Pull Request targeting `main` using our PR template.
+5. **Open a PR**:
+   Submit your pull request against `main`. Keep your PR focused and descriptive.
 
 ---
 
-## Tone & Style Guidelines
+## Guidelines
 
-- **Zero Tolerance for Slang**: All error messages and logs must sound like passive-aggressive executive communications.
-- **Strict Immutability**: `core_competency` declarations must never be mutable.
-- **Clean Architecture**: Keep the compiler and runtime modular, fast, and free of external vendor dependencies.
+- **Keep error messages corporate**: Any new compiler or runtime error should sound like an email from HR or middle management.
+- **Zero external dependencies**: The core toolchain must remain pure Python using only standard library modules.
+- **Make sure tests pass**: We run automated GitHub Actions across Python 3.9 through 3.12.

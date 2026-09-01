@@ -5,14 +5,10 @@ import fs from 'node:fs';
 
 const corpGrammar = JSON.parse(fs.readFileSync(new URL('./corp.tmLanguage.json', import.meta.url), 'utf-8'));
 
-const githubRepo = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : 'corp';
-const githubOwner = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[0] : 'corp-plus-plus';
-const isGitHubPages = Boolean(process.env.GITHUB_PAGES || process.env.GITHUB_ACTIONS);
-
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.SITE || `https://${githubOwner}.github.io`,
-	base: process.env.BASE_PATH || (isGitHubPages ? `/${githubRepo}` : undefined),
+	site: process.env.SITE || 'https://corp-plus-plus.github.io',
+	base: process.env.BASE_PATH !== undefined ? process.env.BASE_PATH : '/corp',
 	integrations: [
 		starlight({
 			title: 'Corp++',
@@ -21,7 +17,7 @@ export default defineConfig({
 				src: './src/assets/corp_logo.png',
 			},
 			social: [
-				{ icon: 'github', label: 'GitHub', href: `https://github.com/${githubOwner}/${githubRepo}` }
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/corp-plus-plus/corp' }
 			],
 			customCss: [
 				'./src/styles/custom.css'

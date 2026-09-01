@@ -23,7 +23,8 @@ export default defineConfig({
 			expressiveCode: {
 				shiki: {
 					langs: [corpGrammar]
-				}
+				},
+				customLangs: [corpGrammar]
 			},
 			sidebar: [
 				{

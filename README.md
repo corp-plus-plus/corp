@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 **Corp++** is the premier esoteric systems programming language meticulously architected to bridge the gap between high-performance computational deliverables and corporate middle-management vernacular.
 
@@ -16,7 +16,7 @@ Gone are the days of mundane `main()`, `let`, `if`, `while`, and `try/catch`. In
 
 ---
 
-## 🚀 Quickstart & Standalone Binary ("Send to Friends")
+## Quickstart & Standalone Binary ("Send to Friends")
 
 Corp++ ships with a self-contained, single-file executable binary (`dist/corp`) that you can directly execute, copy into your `PATH`, or send directly to colleagues and stakeholders.
 
@@ -41,7 +41,7 @@ corp run examples/01_onboarding.corp
 
 ---
 
-## 👔 The Corp++ Grammar & Language Specification
+## The Corp++ Grammar & Language Specification
 
 | Language Construct | Corp++ Syntax | Standard Equivalent | Corporate Operational Context |
 |---|---|---|---|
@@ -72,7 +72,7 @@ corp run examples/01_onboarding.corp
 
 ---
 
-## 📑 Hello World & Example Deliverables
+## Hello World & Example Deliverables
 
 ### 1. Onboarding (`examples/01_onboarding.corp`)
 ```corp
@@ -146,7 +146,7 @@ sync_alignment {
 
 ---
 
-## 🚨 Corporate Incident Telemetry & PIP Notices
+## Corporate Incident Telemetry & PIP Notices
 
 When errors occur, Corp++ outputs enterprise incident reports with passive-aggressive escalation levels and actionable Performance Improvement Plans (PIPs):
 
@@ -167,7 +167,7 @@ Next Steps: Action Item: Escalate to your Level 2 Managing Director immediately.
 
 ---
 
-## 🏛️ "The Boardroom" Interactive REPL
+## "The Boardroom" Interactive REPL
 
 Launch an interactive corporate alignment session directly from your terminal:
 
@@ -195,7 +195,7 @@ corp[Q6]> hard_stop
 
 ---
 
-## 🛠️ CLI Reference (`corp`)
+## CLI Reference (`corp`)
 
 ```
 usage: corp [-h] [-v] {run,compile,repl,audit,package} ...
@@ -210,7 +210,7 @@ Corporate Commands:
 
 ---
 
-## 🏢 Enterprise Compliance & Governance
+## Enterprise Compliance & Governance
 - **Zero Third-Party Vendor Risk**: Built 100% in pure Python with standard libraries.
 - **Git Versioned & Tagged**: Full release lineage maintained in version control.
 - **Strict Layoffs Policy**: Non-core mutable variables are immediately garbage-collected upon corporate restructuring.

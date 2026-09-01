@@ -7,7 +7,7 @@ Corp++ requires **Python 3.8+** with standard libraries. It ships with a standal
 
 ---
 
-## ⚡ Fast Track: Using the Pre-Built Binary
+## Fast Track: Using the Pre-Built Binary
 
 If you already have the repository cloned:
 
@@ -30,7 +30,7 @@ corp --version
 
 ---
 
-## 🤝 "Send to Friends" Binary Distribution
+## "Send to Friends" Binary Distribution
 
 Because Corp++ is bundled using Python's executable archive packaging (`zipapp`), the compiled binary in `dist/corp` is a single file containing the entire compiler, runtime interpreter, bytecode VM, and corporate error telemetry engine.
 
@@ -43,7 +43,7 @@ chmod +x corp
 
 ---
 
-## 🔨 Building the Toolchain from Source
+## Building the Toolchain from Source
 
 To package a fresh standalone executable binary:
 

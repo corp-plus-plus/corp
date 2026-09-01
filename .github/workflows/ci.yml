@@ -1,0 +1,59 @@
+name: Corp++ Enterprise CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-package:
+    name: Test & Package Binary
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout Strategic Repository
+        uses: actions/checkout@v4
+
+      - name: Align Python Runtime ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Execute Enterprise Quality Assurance (Unit Tests)
+        run: |
+          python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Package Standalone Executable Binary
+        run: |
+          python scripts/build_binary.py
+
+      - name: Validate Binary Execution
+        run: |
+          ./dist/corp --version
+          ./dist/corp run examples/01_onboarding.corp
+          ./dist/corp run examples/05_q3_financials.corp --vm
+          ./dist/corp audit examples/05_q3_financials.corp
+
+  build-docs:
+    name: Build Documentation Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Docs Dependencies
+        working-directory: ./docs
+        run: npm ci || npm install
+
+      - name: Build Astro Starlight Docs
+        working-directory: ./docs
+        run: npm run build

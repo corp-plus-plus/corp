@@ -7,7 +7,7 @@ Corp++ includes both a tree-walking interpreter and a dedicated stack-based **Co
 
 ---
 
-## ⚡ Corporate Instruction Set Architecture (CISA)
+## Corporate Instruction Set Architecture (CISA)
 
 The compiler translates AST structures into compact bytecode instructions:
 
@@ -23,7 +23,7 @@ The compiler translates AST structures into compact bytecode instructions:
 
 ---
 
-## 📦 Core Opcodes
+## Core Opcodes
 
 | Opcode | Description |
 |---|---|
@@ -39,7 +39,7 @@ The compiler translates AST structures into compact bytecode instructions:
 
 ---
 
-## 🚀 Running with CVM
+## Running with CVM
 
 To force bytecode execution on the CVM:
 

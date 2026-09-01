@@ -7,7 +7,7 @@ The `corp` executable provides a unified interface for running, compiling, audit
 
 ---
 
-## 📋 Command Matrix
+## Command Matrix
 
 | Command | Syntax | Description |
 |---|---|---|
@@ -19,7 +19,7 @@ The `corp` executable provides a unified interface for running, compiling, audit
 
 ---
 
-## 🚀 Examples
+## Examples
 
 ### Running a script
 ```bash

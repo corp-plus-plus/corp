@@ -35,7 +35,7 @@ core_competency MAX_ALLOWABLE_EXPENSE = 1000000;
 core_competency HEADQUARTERS_CITY = "New York";
 ```
 
-### 🚨 Hostile Takeover Protection
+### Hostile Takeover Protection
 Attempting to mutate a `core_competency` will immediately abort execution and trigger an enterprise incident report:
 
 ```corp

@@ -7,7 +7,7 @@ When code fails in Corp++, errors are not merely printed as generic stack traces
 
 ---
 
-## 🚨 Incident Report Anatomy
+## Incident Report Anatomy
 
 ```text
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -26,7 +26,7 @@ Next Steps: Action Item: Escalate to your Level 2 Managing Director immediately.
 
 ---
 
-## 👔 Escalation Hierarchy
+## Escalation Hierarchy
 
 | Escalation Level | Description |
 |---|---|

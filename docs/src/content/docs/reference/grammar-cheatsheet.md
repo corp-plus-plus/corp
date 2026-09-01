@@ -3,7 +3,7 @@ title: Complete Grammar Cheatsheet
 description: Quick lookup cheatsheet for all Corp++ keywords, operators, and syntax rules.
 ---
 
-## 🗂️ Keyword Reference
+## Keyword Reference
 
 | Keyword | Purpose | Code Example |
 |---|---|---|
@@ -34,7 +34,7 @@ description: Quick lookup cheatsheet for all Corp++ keywords, operators, and syn
 
 ---
 
-## 🔣 Operators & Literals
+## Operators & Literals
 
 | Symbol / Literal | Meaning |
 |---|---|

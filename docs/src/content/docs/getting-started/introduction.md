@@ -3,7 +3,7 @@ title: Executive Summary & Introduction
 description: Discover why Corp++ is transforming the enterprise software development lifecycle.
 ---
 
-## 📌 The Corporate Dilemma
+## The Corporate Dilemma
 
 For decades, software engineers and enterprise management have spoken fundamentally different languages. While developers discuss *pointers*, *closures*, *stack frames*, and *exception handlers*, executive leadership communicates through *synergistic alignment*, *action items*, *risk mitigation*, and *bandwidth constraints*.
 
@@ -11,7 +11,7 @@ For decades, software engineers and enterprise management have spoken fundamenta
 
 ---
 
-## 🎯 Strategic Value Proposition
+## Strategic Value Proposition
 
 ```corp
 sync_alignment {
@@ -33,7 +33,7 @@ In Corp++:
 
 ---
 
-## 🏛️ Language Paradigm Overview
+## Language Paradigm Overview
 
 | Systems Programming Concept | Corp++ Enterprise Lexicon |
 |---|---|

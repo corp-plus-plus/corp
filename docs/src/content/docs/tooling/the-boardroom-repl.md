@@ -7,7 +7,7 @@ description: Real-time corporate alignment, memory inspection, and live evaluati
 
 ---
 
-## 🏛️ Launching the Boardroom
+## Launching the Boardroom
 
 ```bash
 corp repl
@@ -22,7 +22,7 @@ corp repl
 
 ---
 
-## 💼 Special Executive Commands
+## Special Executive Commands
 
 Inside the REPL, you can execute special slash commands:
 
@@ -33,7 +33,7 @@ Inside the REPL, you can execute special slash commands:
 
 ---
 
-## 📝 Example Session
+## Example Session
 
 ```text
 corp[Q1]> action_item team_size = 6;

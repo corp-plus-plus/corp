@@ -7,7 +7,7 @@ Explore battle-tested corporate design patterns in Corp++.
 
 ---
 
-## 📊 1. Enterprise KPI Evaluation (FizzBuzz)
+## 1. Enterprise KPI Evaluation (FizzBuzz)
 
 ```corp
 sync_alignment {
@@ -36,7 +36,7 @@ sync_alignment {
 
 ---
 
-## 💰 2. EBITDA Financial Engineering
+## 2. EBITDA Financial Engineering
 
 ```corp
 sync_alignment {

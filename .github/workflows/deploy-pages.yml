@@ -33,6 +33,10 @@ jobs:
 
       - name: Build Astro Starlight Site
         working-directory: ./docs
+        env:
+          GITHUB_PAGES: "true"
+          SITE: "https://${{ github.repository_owner }}.github.io"
+          BASE_PATH: "/${{ github.event.repository.name }}"
         run: npm run build
 
       - name: Upload Pages Artifact

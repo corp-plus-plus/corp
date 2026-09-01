@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "Corp++ (corp) - Esoteric Systems Language where Enterprise Architecture meets Middle-Management Jargon"
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = { text = "ViB License v4.1 — Restricted Use License" }
 authors = [
   { name = "Executive Leadership Team", email = "board@corp-plus-plus.internal" }
 ]

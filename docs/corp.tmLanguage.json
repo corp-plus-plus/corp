@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Corp++",
+  "scopeName": "source.corp",
+  "fileTypes": ["corp"],
+  "patterns": [
+    {
+      "name": "comment.line.double-slash.corp",
+      "match": "//.*$"
+    },
+    {
+      "name": "comment.block.corp",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "string.quoted.double.corp",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.corp",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "string.quoted.single.corp",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.corp",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "constant.numeric.corp",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    {
+      "name": "constant.language.corp",
+      "match": "\\b(aligned|misaligned|out_of_office|unassigned|true|false|null)\\b"
+    },
+    {
+      "name": "keyword.control.corp",
+      "match": "\\b(sync_alignment|quarterly_deliverables|hard_stop|as_per_our_discussion|pivot|circle_back|touch_every_base|in|table_this|push_to_next_sprint|let's_take_this_offline|lets_take_this_offline|mitigate_risk|opt_out|deliverable)\\b"
+    },
+    {
+      "name": "keyword.declaration.corp",
+      "match": "\\b(action_item|core_competency|restructure|promote|demote|layoffs|delegate|loop_in)\\b"
+    },
+    {
+      "name": "support.function.corp",
+      "match": "\\b(touch_base|please_advise|broadcast_all_hands|headcount|range|corporate_string|synergy_number)\\b"
+    },
+    {
+      "name": "keyword.operator.corp",
+      "match": "\\b(synergizes_with|and|or|not)\\b|[+\\-*/%!=<>]=?"
+    }
+  ]
+}

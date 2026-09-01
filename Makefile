@@ -3,7 +3,7 @@
 # "Automating Enterprise Value Delivery Since Q3"
 # ==============================================================================
 
-.PHONY: all test build package run-examples repl clean audit help
+.PHONY: all test build package run-examples repl clean audit docs docs-dev help
 
 PYTHON ?= python3
 
@@ -16,7 +16,8 @@ help:
 	@echo "  make run-examples  - Execute all example deliverable scripts"
 	@echo "  make repl          - Launch 'The Boardroom' interactive REPL"
 	@echo "  make audit         - Run static compliance check on all examples"
-	@echo "  make install       - Symlink dist/corp to /usr/local/bin/corp (requires sudo/write perm)"
+	@echo "  make docs          - Build Astro Starlight documentation site"
+	@echo "  make docs-dev      - Run Astro Starlight docs local dev server"
 	@echo "  make clean         - Remove build artifacts & cache files"
 
 test:
@@ -45,6 +46,14 @@ audit:
 	@echo "==> Executing Enterprise Compliance Audits..."
 	@./dist/corp audit examples/01_onboarding.corp
 	@./dist/corp audit examples/05_q3_financials.corp
+
+docs:
+	@echo "==> Building Astro Starlight Documentation Site in docs/..."
+	@cd docs && npm run build
+
+docs-dev:
+	@echo "==> Launching Astro Starlight Documentation Server..."
+	@cd docs && npm run dev
 
 repl:
 	@./dist/corp repl
